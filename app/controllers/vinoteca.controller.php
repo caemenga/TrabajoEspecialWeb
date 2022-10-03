@@ -28,4 +28,15 @@ class VinotecaController{
         header("location: " .BASE_URL);
     }
 
+    function addProduct(){
+
+        $product = $_POST["producto"];
+        $stock = $_POST["stock"];
+
+        
+        $id = $this->productModel->addProductToList($product, $stock);
+        
+        header("location: " .BASE_URL);
+    }
+
 }

@@ -25,6 +25,10 @@ switch ($params[0]) {
         break;
     case 'edit':
         $vinotecaController -> editItem($params[1]);
+        break;
+    case 'add':
+        $vinotecaController -> addProduct();
+        break;    
     default:
         echo('404 Page not found');
         break;

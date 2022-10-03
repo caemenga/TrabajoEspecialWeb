@@ -22,5 +22,15 @@ class ProductModel{
         $query = $this->db->prepare("DELETE FROM db_productos WHERE id_producto=?");
         $query->execute([$id]);
     }
+
+    public function addProductToList($product, $stock){
+
+
+        $query = $this->db->prepare("INSERT INTO db_productos (producto, stock) VALUES(?,?)");
+        $query->execute([$product, $stock]);
+        return $this->db->lastInsertId();
+
+
+    }
 }
 
