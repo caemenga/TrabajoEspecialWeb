@@ -23,4 +23,9 @@ class VinotecaController{
         header("location: " .BASE_URL);
     }
 
+    public function editItem($id){
+        $this->productModel->editItemById($id);
+        header("location: " .BASE_URL);
+    }
+
 }

@@ -22,6 +22,9 @@ switch ($params[0]) {
         break;
     case 'delete':
         $vinotecaController->delteItem($params[1]);
+        break;
+    case 'edit':
+        $vinotecaController -> editItem($params[1]);
     default:
         echo('404 Page not found');
         break;
