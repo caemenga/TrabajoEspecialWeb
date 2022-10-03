@@ -29,14 +29,15 @@ class VinotecaController{
     }
 
     function addProduct(){
-
+        if((isset($_POST))&&(!empty($_POST))){
         $product = $_POST["producto"];
         $stock = $_POST["stock"];
-
+        
         
         $id = $this->productModel->addProductToList($product, $stock);
         
+        
+        }
         header("location: " .BASE_URL);
     }
-
 }
