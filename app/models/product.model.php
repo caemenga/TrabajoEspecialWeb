@@ -18,8 +18,9 @@ class ProductModel{
         
     } 
     
-    public function getProductById($id){
-        
+    public function deleteProductByID($id){
+        $query = $this->db->prepare("DELETE FROM db_productos WHERE id_producto=?");
+        $query->execute([$id]);
     }
 }
 

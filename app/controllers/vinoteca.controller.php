@@ -18,4 +18,9 @@ class VinotecaController{
         $this->view->showProductList($list);
     }
 
+    public function delteItem($id){
+        $this->productModel->deleteProductByID($id);
+        header("location: " .BASE_URL);
+    }
+
 }

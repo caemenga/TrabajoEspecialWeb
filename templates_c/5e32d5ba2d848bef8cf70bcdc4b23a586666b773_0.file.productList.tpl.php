@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-01 01:37:28
+/* Smarty version 4.2.1, created on 2022-10-03 16:06:29
   from 'C:\xampp\htdocs\web2\TPE2\templates\productList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63377db8d91740_18054292',
+  'unifunc' => 'content_633aec652d2839_86369566',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e32d5ba2d848bef8cf70bcdc4b23a586666b773' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE2\\templates\\productList.tpl',
-      1 => 1664550944,
+      1 => 1664805894,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63377db8d91740_18054292 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633aec652d2839_86369566 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -37,6 +37,10 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
             <span> <b><?php echo $_smarty_tpl->tpl_vars['product']->value->producto;?>
 </b> - <?php echo $_smarty_tpl->tpl_vars['product']->value->marca;?>
 </span>
+            <div>
+            <a href='delete/<?php echo $_smarty_tpl->tpl_vars['product']->value->id_producto;?>
+' type='button' class='btn btn-danger'>Delete</a>
+            </div>
         </li>
 
     <?php
