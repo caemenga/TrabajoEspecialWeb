@@ -23,9 +23,11 @@ switch ($params[0]) {
     case 'delete':
         $vinotecaController->delteItem($params[1]);
         break;
-    case 'edit':
-        $vinotecaController -> editItem($params[1]);
+    case 'showEditForm':
+        $vinotecaController -> showEditForm($params[1]);
         break;
+    case 'edit':
+        $vinotecaController -> editProduct();
     case 'add':
         $vinotecaController -> addProduct();
         break;    

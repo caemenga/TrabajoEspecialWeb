@@ -32,5 +32,10 @@ class ProductModel{
 
 
     }
+
+    public function updateProduct($product, $stock){
+        $query = $this->db->prepare("UPDATE db_productos WHERE producto =? WHERE stock=?");
+        $query->execute($product, $stock);
+    }
 }
 

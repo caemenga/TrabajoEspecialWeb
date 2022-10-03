@@ -9,4 +9,10 @@ class VinotecaView{
         $this->smarty->assign('list', $list);
         $this->smarty->display('productList.tpl');
     }
+
+    public function showEditForm($id){
+        $this->smarty->assign('id_producto', $id);
+        $this->smarty->display('editForm.tpl');
+
+    }
 }

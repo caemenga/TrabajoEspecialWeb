@@ -23,10 +23,7 @@ class VinotecaController{
         header("location: " .BASE_URL);
     }
 
-    public function editItem($id){
-        $this->productModel->editItemById($id);
-        header("location: " .BASE_URL);
-    }
+
 
     function addProduct(){
         if((isset($_POST))&&(!empty($_POST))){
@@ -39,5 +36,22 @@ class VinotecaController{
         
         }
         header("location: " .BASE_URL);
+    }
+    public function showEditForm($id){
+        $this->view->showEditForm($id);
+    }
+
+    public function editProduct(){
+        if((isset($_POST))&&(!empty($_POST))){
+            $product = $_POST["producto"];
+            $stock = $_POST["stock"];
+            
+            
+            $id = $this->productModel->updateProduct($product, $stock);
+            
+            
+            }
+            header("location: " .BASE_URL);
+
     }
 }
