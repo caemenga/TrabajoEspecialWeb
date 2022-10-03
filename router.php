@@ -20,6 +20,8 @@ switch ($params[0]) {
     case 'home':
         $vinotecaController->showProductList();
         break;
+    case 'delete':
+        $vinotecaController->delteItem($params[1]);
     default:
         echo('404 Page not found');
         break;
