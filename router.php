@@ -27,7 +27,7 @@ switch ($params[0]) {
         $vinotecaController -> showEditForm($params[1]);
         break;
     case 'edit':
-        $vinotecaController -> editProduct();
+        $vinotecaController -> editProduct($params[1]);
     case 'add':
         $vinotecaController -> addProduct();
         break;    

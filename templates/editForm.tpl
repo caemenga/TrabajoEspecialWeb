@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-<form action='edit'method="POST">
+<form action='edit/{$id_producto}'method="POST">
 <div class="row">
     <div class="col">
   

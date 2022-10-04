@@ -39,17 +39,15 @@ class VinotecaController{
     }
     public function showEditForm($id){
         $this->view->showEditForm($id);
-    }
 
-    public function editProduct(){
+    }
+    
+
+    public function editProduct($id){
         if((isset($_POST))&&(!empty($_POST))){
             $product = $_POST["producto"];
             $stock = $_POST["stock"];
-            
-            
-            $id = $this->productModel->updateProduct($product, $stock);
-            
-            
+            $id = $this->productModel->updateProduct($product, $stock, $id);
             }
             header("location: " .BASE_URL);
 
