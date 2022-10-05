@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-03 18:15:43
+/* Smarty version 4.2.1, created on 2022-10-05 20:56:50
   from 'C:\xampp\htdocs\web2\TPE2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633b0aaf666ab3_14191481',
+  'unifunc' => 'content_633dd372091595_57104485',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '37956e9b7d8152fa38e2eeaf94134be860347dc6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE2\\templates\\header.tpl',
-      1 => 1664813738,
+      1 => 1664990659,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633b0aaf666ab3_14191481 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633dd372091595_57104485 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,12 +48,11 @@ function content_633b0aaf666ab3_14191481 (Smarty_Internal_Template $_smarty_tpl)
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Productos
+                      Bebidas
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Vinos</a></li>
-                      <li><a class="dropdown-item" href="#">Bebidas</a></li>
-                      <li><a class="dropdown-item" href="#">Cervezas</a></li>
+                      <li><a class="dropdown-item" href="wine">Vinos</a></li>
+                      <li><a class="dropdown-item" href="beer">Blanco</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="#">Accesorios</a></li>
                     </ul>

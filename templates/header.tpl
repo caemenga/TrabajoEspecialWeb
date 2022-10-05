@@ -24,12 +24,11 @@
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Productos
+                      Bebidas
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Vinos</a></li>
-                      <li><a class="dropdown-item" href="#">Bebidas</a></li>
-                      <li><a class="dropdown-item" href="#">Cervezas</a></li>
+                      <li><a class="dropdown-item" href="wine">Vinos</a></li>
+                      <li><a class="dropdown-item" href="beer">Cervezas</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="#">Accesorios</a></li>
                     </ul>

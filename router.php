@@ -1,5 +1,5 @@
 <?php
-require_once './app/controllers/vinoteca.controller.php';
+require_once './app/controllers/admin.controller.php';
 
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -12,25 +12,28 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action);
 
 // instancio el unico controller que existe por ahora
-$vinotecaController = new VinotecaController();
+$adminController = new AdminController();
+
 
 
 // tabla de ruteo
 switch ($params[0]) {
     case 'home':
-        $vinotecaController->showProductList();
+        $adminController->showProductList();
         break;
     case 'delete':
-        $vinotecaController->delteItem($params[1]);
+        $adminController->delteItem($params[1]);
         break;
     case 'showEditForm':
-        $vinotecaController -> showEditForm($params[1]);
+        $adminController -> showEditForm($params[1]);
         break;
     case 'edit':
-        $vinotecaController -> editProduct($params[1]);
+        $adminController -> editProduct($params[1]);
     case 'add':
-        $vinotecaController -> addProduct();
-        break;    
+        $adminController -> addProduct();
+        break;
+    case 'beer':
+        $specificationsController->showBeers();    
     default:
         echo('404 Page not found');
         break;

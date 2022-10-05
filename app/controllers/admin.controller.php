@@ -1,14 +1,14 @@
 <?php
-require_once './app/views/vinoteca.view.php';
+require_once './app/views/admin.view.php';
 require_once './app/models/product.model.php';
 
-class VinotecaController{
+class AdminController{
    
     private $view;
     private $productModel;
 
     public function __construct(){
-        $this->view = new VinotecaView();
+        $this->view = new AdminView();
         $this->productModel = new ProductModel();
     }
 
@@ -51,5 +51,10 @@ class VinotecaController{
             }
             header("location: " .BASE_URL);
 
+    }
+
+    public function showBeers(){
+        $list = $this->productModel->getBeersList();
+        $this->view->showBeersList($list); 
     }
 }

@@ -37,5 +37,10 @@ class ProductModel{
         $query = $this->db->prepare("UPDATE db_productos SET producto =?, stock =? WHERE id_producto=?");
         $query->execute([$product, $stock, $id]);
     }
+
+   public function getBeersList(){
+    $query = $this->db->prepare("SELECT producto FROM db_productos");
+    $query->execute();
+   }
 }
 

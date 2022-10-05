@@ -1,6 +1,6 @@
 <?php
 require_once './libs/smarty-master/libs/Smarty.class.php';
-class VinotecaView{
+class AdminView{
     private $smarty;
     public function __construct(){
         $this->smarty = new Smarty();
