@@ -24,7 +24,7 @@ switch ($params[0]) {
     case 'delete':
         $adminController->delteItem($params[1]);
         break;
-    case 'showEditForm':
+    case 'showeditform':
         $adminController -> showEditForm($params[1]);
         break;
     case 'edit':

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-03 20:36:54
+/* Smarty version 4.2.1, created on 2022-10-05 21:09:28
   from 'C:\xampp\htdocs\web2\TPE2\templates\productList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633b2bc6a36a83_89789225',
+  'unifunc' => 'content_633dd668cdfa58_79291859',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e32d5ba2d848bef8cf70bcdc4b23a586666b773' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE2\\templates\\productList.tpl',
-      1 => 1664821821,
+      1 => 1664996935,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_633b2bc6a36a83_89789225 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633dd668cdfa58_79291859 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:formProduct.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -40,7 +40,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 </b> - <?php echo $_smarty_tpl->tpl_vars['product']->value->stock;?>
 </span>
                 <div>
-                <a href='showEditForm/<?php echo $_smarty_tpl->tpl_vars['product']->value->id_producto;?>
+                <a href='showeditform/<?php echo $_smarty_tpl->tpl_vars['product']->value->id_producto;?>
 ' type='button' class='btn btn-danger'>Edit</a>
                     <a href='delete/<?php echo $_smarty_tpl->tpl_vars['product']->value->id_producto;?>
 ' type='button' class='btn btn-danger'>Delete</a>
