@@ -39,8 +39,8 @@ class ProductModel{
     }
 
    public function getBeersList(){
-    $query = $this->db->prepare("SELECT producto FROM db_productos");
-    $query->execute();
+    $query = $this->db->prepare("SELECT producto FROM db_productos WHERE producto=?");
+    $query->execute(["cerveza"]);
    }
 }
 

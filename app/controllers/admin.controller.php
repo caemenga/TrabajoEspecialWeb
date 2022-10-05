@@ -1,15 +1,18 @@
 <?php
 require_once './app/views/admin.view.php';
 require_once './app/models/product.model.php';
+require_once './app/models/specifications.model.php';
 
 class AdminController{
    
     private $view;
     private $productModel;
+    private $specificationsModel;
 
     public function __construct(){
         $this->view = new AdminView();
         $this->productModel = new ProductModel();
+        $this->specificationsModel = new SpecificationsModel();
     }
 
     public function showProductList(){

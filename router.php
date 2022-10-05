@@ -33,7 +33,7 @@ switch ($params[0]) {
         $adminController -> addProduct();
         break;
     case 'beer':
-        $specificationsController->showBeers();    
+        $adminController->showBeers();    
     default:
         echo('404 Page not found');
         break;
