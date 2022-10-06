@@ -38,9 +38,13 @@ class ProductModel{
         $query->execute([$product, $stock, $id]);
     }
 
-   public function getBeersList(){
-    $query = $this->db->prepare("SELECT producto FROM db_productos WHERE producto=?");
-    $query->execute(["cerveza"]);
+   public function getProductByName($name){
+    $query = $this->db->prepare("SELECT * FROM db_productos WHERE producto=?");
+    $query->execute([$name]);
+
+    $products = $query->fetchAll(PDO::FETCH_OBJ);
+    return $products;
    }
+
 }
 

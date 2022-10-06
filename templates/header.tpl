@@ -22,17 +22,28 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="home">Home</a>
                   </li>
+                 
+                 
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       Bebidas
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="wine">Vinos</a></li>
-                      <li><a class="dropdown-item" href="beer">Cervezas</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                      <li><a class="dropdown-item" href="show-product/cerveza">Cervezas</a></li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link btn-secondary dropdown-toggle" aria-labelledby="navbarDropdownMenuLink" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Vinos
+                        </a>
+                          <ul class="dropdown-submenu">
+                                <li><a class="dropdown-item" href="show-product/cerveza">malbeck</a></li>
+                                <li><a class="dropdown-item" href="show-product/cerveza">pinot noir</a></li>
+                                <li><a class="dropdown-item" href="show-product/cerveza">cabernet</a></li>      
+                          </ul>
+                      </li>
+                      
                     </ul>
                   </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Log in</a>
                   </li>

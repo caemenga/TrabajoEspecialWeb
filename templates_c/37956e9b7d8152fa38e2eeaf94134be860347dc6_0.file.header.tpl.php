@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-05 21:38:50
+/* Smarty version 4.2.1, created on 2022-10-06 07:34:07
   from 'C:\xampp\htdocs\web2\TPE2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633ddd4a840db8_81255934',
+  'unifunc' => 'content_633e68cf338027_35803207',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '37956e9b7d8152fa38e2eeaf94134be860347dc6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE2\\templates\\header.tpl',
-      1 => 1664998544,
+      1 => 1665034443,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633ddd4a840db8_81255934 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633e68cf338027_35803207 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,17 +46,28 @@ function content_633ddd4a840db8_81255934 (Smarty_Internal_Template $_smarty_tpl)
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="home">Home</a>
                   </li>
+                 
+                 
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       Bebidas
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="wine">Vinos</a></li>
-                      <li><a class="dropdown-item" href="beer">Cervezas</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                      <li><a class="dropdown-item" href="show-product/cerveza">Cervezas</a></li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link btn-secondary dropdown-toggle" aria-labelledby="navbarDropdownMenuLink" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Vinos
+                        </a>
+                          <ul class="dropdown-submenu">
+                                <li><a class="dropdown-item" href="show-product/cerveza">malbeck</a></li>
+                                <li><a class="dropdown-item" href="show-product/cerveza">pinot noir</a></li>
+                                <li><a class="dropdown-item" href="show-product/cerveza">cabernet</a></li>      
+                          </ul>
+                      </li>
+                      
                     </ul>
                   </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Log in</a>
                   </li>

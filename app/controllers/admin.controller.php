@@ -17,7 +17,6 @@ class AdminController{
 
     public function showProductList(){
         $list = $this->productModel->getAllProducts();
-
         $this->view->showProductList($list);
     }
 
@@ -56,8 +55,8 @@ class AdminController{
 
     }
 
-    public function showBeers(){
-        $list = $this->productModel->getBeersList();
-        $this->view->showBeersList($list); 
+    public function showProduct($name){
+        $list = $this->productModel->getProductByName($name);
+        $this->view->showProductList($list); 
     }
 }

@@ -15,9 +15,4 @@ class AdminView{
         $this->smarty->display('editForm.tpl');
 
     }
-
-    public function showBeersList($list){
-        $this->smarty->assign('list', $list);
-        $this->smarty->display('productList.tpl');
-    }
 }
