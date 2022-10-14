@@ -31,7 +31,11 @@
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="show-product/cerveza">Cervezas</a></li>
                       <li><a class="dropdown-item" href="show-product/vino">Vinos</a></li>
-                      <li><a class="dropdown-item" href="show-product/cerveza">Bebidas Blancas</a></li>
+                      <li><a class="dropdown-item" href="show-product/tequila">Tequilas</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      //solo el admin puede ver especificaciones
+                      <li><a class="dropdown-item" href="show-specifications">Especificaciones</a></li>
+                      
                       
                     </ul>
                   </li>

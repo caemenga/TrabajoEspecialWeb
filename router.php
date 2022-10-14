@@ -34,7 +34,10 @@ switch ($params[0]) {
         break;
     case 'show-product':
         $adminController->showProduct($params[1]);
-        break; 
+        break;
+    case 'show-specifications':
+        $adminController->showSpecifications();
+        break;
     default:
         echo('404 Page not found');
         break;

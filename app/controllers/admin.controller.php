@@ -43,6 +43,11 @@ class AdminController{
         $this->view->showEditForm($id);
 
     }
+
+    public function showSpecifications(){
+        $list = $this->specificationsModel->getAllEspecificacitons();
+        $this->view->showSpecifications($list);
+    }
     
 
     public function editProduct($id){
