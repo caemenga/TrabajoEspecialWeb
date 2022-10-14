@@ -7,7 +7,7 @@ class AdminView{
     }
     public function showProductList($list){
         $this->smarty->assign('list', $list);
-        $this->smarty->display('productList.tpl');
+        $this->smarty->display('productTable.tpl');
     }
 
     public function showEditForm($id){
@@ -17,7 +17,7 @@ class AdminView{
     }
     public function showProductListSelect($list){
         $this->smarty->assign('list', $list);
-        $this->smarty->display('productListSelect.tpl');
+        $this->smarty->display('productTable.tpl');
     }
     public function showSpecifications($list){
         $this->smarty->assign('list', $list);
