@@ -17,7 +17,7 @@ class AdminView{
     }
     public function showProductListSelect($list){
         $this->smarty->assign('list', $list);
-        $this->smarty->display('productTable.tpl');
+        $this->smarty->display('productListSelect.tpl');
     }
     public function showSpecifications($list){
         $this->smarty->assign('list', $list);
