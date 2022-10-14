@@ -57,6 +57,6 @@ class AdminController{
 
     public function showProduct($name){
         $list = $this->productModel->getProductByName($name);
-        $this->view->showProductList($list); 
+        $this->view->showProductListSelect($list); 
     }
 }

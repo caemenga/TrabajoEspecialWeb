@@ -15,4 +15,8 @@ class AdminView{
         $this->smarty->display('editForm.tpl');
 
     }
+    public function showProductListSelect($list){
+        $this->smarty->assign('list', $list);
+        $this->smarty->display('productListSelect.tpl');
+    }
 }

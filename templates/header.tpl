@@ -30,16 +30,8 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="show-product/cerveza">Cervezas</a></li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link btn-secondary dropdown-toggle" aria-labelledby="navbarDropdownMenuLink" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Vinos
-                        </a>
-                          <ul class="dropdown-submenu">
-                                <li><a class="dropdown-item" href="show-product/cerveza">malbeck</a></li>
-                                <li><a class="dropdown-item" href="show-product/cerveza">pinot noir</a></li>
-                                <li><a class="dropdown-item" href="show-product/cerveza">cabernet</a></li>      
-                          </ul>
-                      </li>
+                      <li><a class="dropdown-item" href="show-product/vino">Vinos</a></li>
+                      <li><a class="dropdown-item" href="show-product/cerveza">Bebidas Blancas</a></li>
                       
                     </ul>
                   </li>
