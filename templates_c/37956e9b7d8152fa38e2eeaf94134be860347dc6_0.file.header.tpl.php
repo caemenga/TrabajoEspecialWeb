@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-14 19:00:20
+/* Smarty version 4.2.1, created on 2022-10-14 23:03:05
   from 'C:\xampp\htdocs\web2\TPE2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634995a4312841_99269333',
+  'unifunc' => 'content_6349ce89ad7677_91671172',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '37956e9b7d8152fa38e2eeaf94134be860347dc6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE2\\templates\\header.tpl',
-      1 => 1665766818,
+      1 => 1665781004,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634995a4312841_99269333 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6349ce89ad7677_91671172 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +36,7 @@ function content_634995a4312841_99269333 (Smarty_Internal_Template $_smarty_tpl)
 <body>
     <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="home">Amalaya</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -44,10 +44,10 @@ function content_634995a4312841_99269333 (Smarty_Internal_Template $_smarty_tpl)
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="log-in-form">Log in</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

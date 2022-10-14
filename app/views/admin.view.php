@@ -23,4 +23,9 @@ class AdminView{
         $this->smarty->assign('list', $list);
         $this->smarty->display('specificationsTable.tpl');
     }
+
+    public function showLoginForm($error = null){
+        $this->smarty->assign('error', $error);
+        $this->smarty->display('logInForm.tpl');
+    }
 }
