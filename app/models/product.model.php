@@ -23,19 +23,25 @@ class ProductModel{
         $query->execute([$id]);
     }
 
-    public function addProductToList($product, $stock){
+    public function addProductToList($product, $marca){
 
 
-        $query = $this->db->prepare("INSERT INTO db_productos (producto, stock) VALUES(?,?)");
-        $query->execute([$product, $stock]);
+        $query = $this->db->prepare("INSERT INTO db_productos (producto, marca) VALUES(?,?)");
+        $query->execute([$product, $marca]);
         return $this->db->lastInsertId();
 
 
     }
 
-    public function updateProduct($product, $stock, $id){
-        $query = $this->db->prepare("UPDATE db_productos SET producto =?, stock =? WHERE id_producto=?");
-        $query->execute([$product, $stock, $id]);
+    public function updateProduct($product, $marca, $id){
+        $query = $this->db->prepare("UPDATE db_productos SET producto =?, marca =? WHERE id_producto=?");
+        $query->execute([$product, $marca, $id]);
+    }
+
+    public function getProductById($id){
+        $query = $this->db->prepare("SELECT * FROM db_productos WHERE id_producto =?");
+        $query->execute([$id]);
+        return $query->fetch(PDO::FETCH_OBJ);
     }
 
    public function getProductByName($name){

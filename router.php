@@ -30,7 +30,11 @@ switch ($params[0]) {
     case 'validate':
         $adminController = new AdminController();
         $adminController->validateUser();
-        break;    
+        break;
+    case 'seeProduct':
+        $freeUserController = new FreeUserController();
+        $freeUserController->showProductById($params[1]);
+        break;        
     case 'delete':
         $adminController = new AdminController();
         $adminController->delteItem($params[1]);
@@ -51,8 +55,8 @@ switch ($params[0]) {
         $freeUserController->showProduct($params[1]);
         break;
     case 'show-specifications':
-        $adminController = new AdminController();
-        $adminController->showSpecifications();
+        $freeUserController = new FreeUserController();
+        $freeUserController->showSpecifications();
         break;
     default:
         echo('404 Page not found');

@@ -1,14 +1,14 @@
 {include file="header.tpl"}
 <select class="form-select" aria-label="Default select example">
-        <option selected>tipos</option>
+        <option selected>Marcas</option>
 {if $list[0]->producto == "vino"}
-        <option ><a action = "show-prod-by-especification/malbec">Malbec</a></option>
-        <option ><a action = "show-prod-by-especification/rosado">rosado</a></option>
-        <option ><a action = "show-prod-by-especification/espumante">Espumante</a></option>
+        <option ><a action = "show-prod-by-especification/san_felicien">San Felicien</a></option>
+        <option ><a action = "show-prod-by-especification/toro">Toro</a></option>
+        <option ><a action = "show-prod-by-especification/septima">Septima</a></option>
 {else if $list[0]->producto == "cerveza"}
-        <option ><a action = "show-prod-by-especification/roja">Roja</a></option>
-        <option ><a action = "show-prod-by-especification/rubia">Rubia</a></option>
-        <option ><a action = "show-prod-by-especification/negra">Negra</a></option>
+        <option ><a action = "show-prod-by-especification/quilmes">Quilmes</a></option>
+        <option ><a action = "show-prod-by-especification/brhama">Brhama</a></option>
+        <option ><a action = "show-prod-by-especification/andes">Andes</a></option>
 {/if}
 </select>
 

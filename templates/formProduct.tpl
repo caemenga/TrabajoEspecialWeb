@@ -10,8 +10,8 @@
             <input name="producto" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Stock</label>
-            <input name="stock" type="text" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="form-label">Marca</label>
+            <input name="marca" type="text" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Descripcion</label>
@@ -24,8 +24,8 @@
             <input  name="tipo" type="text" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Marca</label>
-            <input  name="marca" type="text" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="form-label">Stock</label>
+            <input  name="stock" type="text" class="form-control" id="exampleInputPassword1">
         </div>
 
         <div class="mb-3">

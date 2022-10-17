@@ -14,4 +14,11 @@ class SpecificationsModel{
         $specifications = $query->fetchAll(PDO::FETCH_OBJ);
         return $specifications;
     }
+
+    public function getSpecificationByIdProduct($id){
+        $query = $this->db->prepare("SELECT * FROM especificaciones WHERE id_producto=?");
+        $query->execute([$id]);
+
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 }

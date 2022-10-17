@@ -3,6 +3,7 @@ require_once './app/views/admin.view.php';
 require_once './app/models/product.model.php';
 require_once './app/models/user.model.php';
 require_once './app/models/specifications.model.php';
+require_once './app/helpers/admin.helper.php';
 
 class AdminController{
    
@@ -10,12 +11,14 @@ class AdminController{
     private $productModel;
     private $userModel;
     private $specificationsModel;
+    private $helper;
 
     public function __construct(){
         $this->view = new AdminView();
         $this->productModel = new ProductModel();
         $this->specificationsModel = new SpecificationsModel();
         $this->userModel = new UserModel();
+        $this->helper = new AdminHelper();
     }
 
 
@@ -29,31 +32,31 @@ class AdminController{
     function addProduct(){
         if((isset($_POST))&&(!empty($_POST))){
         $product = $_POST["producto"];
-        $stock = $_POST["stock"];
+        $marca = $_POST["marca"];
         
         
-        $id = $this->productModel->addProductToList($product, $stock);
+        $id = $this->productModel->addProductToList($product, $marca);
         
         
         }
         header("location: " .BASE_URL);
     }
+    
+
+    
+
+
     public function showEditForm($id){
         $this->view->showEditForm($id);
 
-    }
-
-    public function showSpecifications(){
-        $list = $this->specificationsModel->getAllEspecificacitons();
-        $this->view->showSpecifications($list);
     }
     
 
     public function editProduct($id){
         if((isset($_POST))&&(!empty($_POST))){
             $product = $_POST["producto"];
-            $stock = $_POST["stock"];
-            $id = $this->productModel->updateProduct($product, $stock, $id);
+            $marca = $_POST["marca"];
+            $id = $this->productModel->updateProduct($product, $marca, $id);
             }
             header("location: " .BASE_URL);
 
@@ -70,8 +73,9 @@ class AdminController{
         // busco el usuario por email
         $user = $this->userModel->getUserByEmail($email);
 
+        var_dump($user);
         // verifico que el usuario existe y que las contraseñas son iguales
-        if ($user && password_verify($password, $user->password)) {
+        if ($password == $user->password){
 
             // inicio una session para este usuario
             session_start();
@@ -79,11 +83,11 @@ class AdminController{
             $_SESSION['USER_EMAIL'] = $user->email;
             $_SESSION['IS_LOGGED'] = true;
 
-            header("Location: " . BASE_URL);
+            header("location: " . BASE_URL);
         } else {
             // si los datos son incorrectos muestro el form con un erro
            $this->view->showLoginForm("El usuario o la contraseña no existe.");
-        } 
+        }
 
     }
 
