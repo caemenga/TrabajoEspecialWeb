@@ -16,22 +16,11 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="home">Home</a>
         </li>
-        {if !isset($smarty.session.USER_ID)}
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="log-in-form">Login</a>
-          </li>
-        {else} 
-          <li class="nav-item ml-auto">
-            <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
-          </li>
-        {/if}
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Bebidas
@@ -44,6 +33,15 @@
             <a class="dropdown-item" href="show-specifications">Especificaciones</a>
           </div>
         </li>
+        {if !isset($smarty.session.USER_ID)}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="log-in-form">Login</a>
+          </li>
+        {else} 
+          <li class="nav-item mr-auto">
+            <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+          </li>
+        {/if}
       </ul>
     </div>
   </nav>

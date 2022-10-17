@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 22:53:48
+/* Smarty version 4.2.1, created on 2022-10-18 00:32:08
   from 'C:\xampp\htdocs\web2\TPE2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634dc0dc9556c1_22348210',
+  'unifunc' => 'content_634dd7e8a2b9b7_53129817',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '37956e9b7d8152fa38e2eeaf94134be860347dc6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE2\\templates\\header.tpl',
-      1 => 1666038970,
+      1 => 1666045914,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634dc0dc9556c1_22348210 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634dd7e8a2b9b7_53129817 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,23 +40,11 @@ function content_634dc0dc9556c1_22348210 (Smarty_Internal_Template $_smarty_tpl)
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="home">Home</a>
         </li>
-        <?php if (!(isset($_SESSION['USER_ID']))) {?>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="log-in-form">Login</a>
-          </li>
-        <?php } else { ?> 
-          <li class="nav-item ml-auto">
-            <a class="nav-link" aria-current="page" href="logout">Logout (<?php echo $_SESSION['USER_EMAIL'];?>
-)</a>
-          </li>
-        <?php }?>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Bebidas
@@ -69,6 +57,16 @@ function content_634dc0dc9556c1_22348210 (Smarty_Internal_Template $_smarty_tpl)
             <a class="dropdown-item" href="show-specifications">Especificaciones</a>
           </div>
         </li>
+        <?php if (!(isset($_SESSION['USER_ID']))) {?>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="log-in-form">Login</a>
+          </li>
+        <?php } else { ?> 
+          <li class="nav-item mr-auto">
+            <a class="nav-link" aria-current="page" href="logout">Logout (<?php echo $_SESSION['USER_EMAIL'];?>
+)</a>
+          </li>
+        <?php }?>
       </ul>
     </div>
   </nav>

@@ -19,21 +19,20 @@ class AdminController{
         $this->specificationsModel = new SpecificationsModel();
         $this->userModel = new UserModel();
         $this->helper = new AdminHelper();
-        $this->helper->checkLoggedIn();
     }
 
 
     public function delteItem($id){
-        if($this->helper->checkLoggedIn()){
+        $this->helper->checkLoggedIn();
         $this->productModel->deleteProductByID($id);
         header("location: " .BASE_URL);
-        }
+        
     }
 
 
 
     function addProduct(){
-        if($this->helper->checkLoggedIn()){
+        $this->helper->checkLoggedIn();
         if((isset($_POST))&&(!empty($_POST))){
         $product = $_POST["producto"];
         $marca = $_POST["marca"];
@@ -44,15 +43,11 @@ class AdminController{
         
         }
         header("location: " .BASE_URL);
-    }
-    }
     
-
-    
-
+    }
 
     public function showEditForm($id){
-        
+        $this->helper->checkLoggedIn();
         $this->view->showEditForm($id);
         }
     
@@ -60,7 +55,7 @@ class AdminController{
 
     public function editProduct($id){
         
-        
+         $this->helper->checkLoggedIn();
             $product = $_POST["producto"];
             $marca = $_POST["marca"];
             $this->productModel->updateProduct($product, $marca, $id);
@@ -71,6 +66,7 @@ class AdminController{
     }
 
     public function  showEditFormSpecifications($id){
+        $this->helper->checkLoggedIn();
         $this->view->showEditFormSpecifications($id);
     }
 
