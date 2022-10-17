@@ -33,5 +33,9 @@ class FreeUserController{
         $list = $this->specificationsModel->getAllEspecificacitons();
         $this->view->showSpecifications($list);
     }
+    public function showSpecificationByName($name){
+        $list = $this->specificationsModel->getSpecificationByName($name);
+        $this->view->showSpecifications($list);
+    }
 
 }

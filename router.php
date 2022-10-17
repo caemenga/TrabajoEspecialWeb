@@ -58,6 +58,10 @@ switch ($params[0]) {
         $freeUserController = new FreeUserController();
         $freeUserController->showSpecifications();
         break;
+    case 'show-product-specification':
+        $freeUserController = new FreeUserController();
+        $freeUserController -> showSpecificationByName($params[1]);
+        break;
     default:
         echo('404 Page not found');
         break;

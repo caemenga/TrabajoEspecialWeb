@@ -21,4 +21,12 @@ class SpecificationsModel{
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    
+    public function getSpecificationByName($name){
+        $query = $this->db->prepare("SELECT * FROM especificaciones WHERE tipo=?");
+        $query->execute([$name]);
+    
+        $specifications = $query->fetchAll(PDO::FETCH_OBJ);
+        return $specifications;
+    }
 }

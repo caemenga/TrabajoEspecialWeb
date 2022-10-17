@@ -67,6 +67,7 @@ class AdminController{
     }
 
     public function validateUser(){
+        if(!empty($_POST['email'])&& !empty($_POST['password']))
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -75,7 +76,7 @@ class AdminController{
 
         var_dump($user);
         // verifico que el usuario existe y que las contraseñas son iguales
-        if ($password == $user->password){
+        if ($user && password_verify($password, ($user->password))){
 
             // inicio una session para este usuario
             session_start();

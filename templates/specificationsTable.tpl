@@ -1,22 +1,41 @@
 {include file = "header.tpl"}
 
-
-<select class="form-select" aria-label="Default select example">
-        <option selected>Vino</option>
-        <option ><a action = "show-especification/malbec">Malbec</a></option>
-        <option ><a action = "show-especification/rosado">Rosado</a></option>
-</select>
-
-<select class="form-select" aria-label="Default select example">
-        <option selected>Cerveza</option>
-<option ><a action = "show-especification/rubia">Rubia</a></option>
-        <option ><a action = "show-especification/roja">Roja</a></option>
-        <option ><a action = "show-especification/negra">Negra</a></option>
-</select>
-<select class="form-select" aria-label="Default select example">
-        <option selected>Tequila</option>
-        <option ><a action = "show-especification/">Artesanal</a></option>
-</select>
+<div class="row">
+<ul>
+<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tipos de Cervezas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="show-product-specification/roja">roja</a>
+            <a class="dropdown-item" href="show-product-specification/rubia">rubia</a>
+            <a class="dropdown-item" href="show-product-specification/negra">negra</a>
+          </div>
+        </li>
+</ul>      
+<ul>
+<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tipos de Vinos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="show-product-specification/malbec">malbec</a>
+            <a class="dropdown-item" href="show-product-specification/rosado">Rosado</a>
+            <a class="dropdown-item" href="show-product-specification/espumante">Espumante</a>
+          </div>
+        </li>
+</ul>      
+<ul>
+<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tipos de Tequila
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="show-product-specification/artesanal">artesanal</a>
+          </div>
+        </li>
+</ul>    
+</div>  
 
 <table class="table">
   <thead>
