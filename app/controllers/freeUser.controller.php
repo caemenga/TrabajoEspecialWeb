@@ -23,6 +23,11 @@ class FreeUserController{
         $this->view->showProductListSelect($list); 
     }
 
+    public function showProductByMarc($marc){
+        $list = $this->productModel->getProductByMarc($marc);
+        $this->view->showProductListSelect($list); 
+    }
+
     public function showProductById($id){
         $product = $this->productModel->getProductById($id);
         $specification = $this->specificationsModel->getSpecificationByIdProduct($id);

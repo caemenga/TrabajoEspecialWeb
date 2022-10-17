@@ -22,9 +22,16 @@
         <li class="nav-item active">
           <a class="nav-link" href="home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="log-in-form">Log in</a>
-        </li>
+        {if !isset($smarty.session.USER_ID)}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="log-in-form">Login</a>
+          </li>
+        {else} 
+          <li class="nav-item ml-auto">
+            <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+          </li>
+        {/if}
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Bebidas

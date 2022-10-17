@@ -1,16 +1,33 @@
 {include file="header.tpl"}
-<select class="form-select" aria-label="Default select example">
-        <option selected>Marcas</option>
-{if $list[0]->producto == "vino"}
-        <option ><a action = "show-prod-by-especification/san_felicien">San Felicien</a></option>
-        <option ><a action = "show-prod-by-especification/toro">Toro</a></option>
-        <option ><a action = "show-prod-by-especification/septima">Septima</a></option>
-{else if $list[0]->producto == "cerveza"}
-        <option ><a action = "show-prod-by-especification/quilmes">Quilmes</a></option>
-        <option ><a action = "show-prod-by-especification/brhama">Brhama</a></option>
-        <option ><a action = "show-prod-by-especification/andes">Andes</a></option>
+
+{if $list[0]->producto == "cerveza"}
+<ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Marcas de Cervezas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="showproduct-by-marc/quilmes">quilmes</a>
+            <a class="dropdown-item" href="showproduct-by-marc/brhama">brhama</a>
+            <a class="dropdown-item" href="showproduct-by-marc/andes">andes</a>
+          </div>
+        </li>
+</ul>     
+{else if $list[0]->producto == "vino"}
+<ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Marcas de Vinos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="showproduct-by-marc/toro">toro</a>
+            <a class="dropdown-item" href="showproduct-by-marc/septima">septima</a>
+            <a class="dropdown-item" href="showproduct-by-marc/san_felicien">San Felicien</a>
+          </div>
+        </li>
+</ul>     
 {/if}
-</select>
+
 
 
 <table class="table">

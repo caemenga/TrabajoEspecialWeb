@@ -52,5 +52,12 @@ class ProductModel{
     return $products;
    }
 
+   public function getProductByMarc($marc){
+    $query = $this->db->prepare("SELECT * FROM db_productos WHERE marca = ?");
+    $query->execute([$marc]);
+
+    return $query->fetchAll(PDO::FETCH_OBJ);
+   }
+
 }
 

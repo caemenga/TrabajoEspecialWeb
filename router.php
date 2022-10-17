@@ -62,6 +62,13 @@ switch ($params[0]) {
         $freeUserController = new FreeUserController();
         $freeUserController -> showSpecificationByName($params[1]);
         break;
+    case 'showproduct-by-marc':
+        $freeUserController = new FreeUserController();
+        $freeUserController-> showProductByMarc($params[1]);
+        break;
+    case 'logout':
+        $adminController = new AdminController();
+        $adminController -> logout();
     default:
         echo('404 Page not found');
         break;

@@ -11,7 +11,7 @@ class AdminHelper {
     public function checkLoggedIn() {
         session_start();
         if (!isset($_SESSION['IS_LOGGED'])) {
-            header("Location: " . BASE_URL . 'login');
+            header("Location: " . BASE_URL . 'log-in-form');
             die();
         }
     } 

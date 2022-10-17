@@ -19,17 +19,21 @@ class AdminController{
         $this->specificationsModel = new SpecificationsModel();
         $this->userModel = new UserModel();
         $this->helper = new AdminHelper();
+        $this->helper->checkLoggedIn();
     }
 
 
     public function delteItem($id){
+        if($this->helper->checkLoggedIn()){
         $this->productModel->deleteProductByID($id);
         header("location: " .BASE_URL);
+        }
     }
 
 
 
     function addProduct(){
+        if($this->helper->checkLoggedIn()){
         if((isset($_POST))&&(!empty($_POST))){
         $product = $_POST["producto"];
         $marca = $_POST["marca"];
@@ -41,24 +45,28 @@ class AdminController{
         }
         header("location: " .BASE_URL);
     }
+    }
     
 
     
 
 
     public function showEditForm($id){
+        
         $this->view->showEditForm($id);
-
-    }
+        }
+    
     
 
     public function editProduct($id){
-        if((isset($_POST))&&(!empty($_POST))){
+        
+        
             $product = $_POST["producto"];
             $marca = $_POST["marca"];
-            $id = $this->productModel->updateProduct($product, $marca, $id);
-            }
+            $this->productModel->updateProduct($product, $marca, $id);
+            
             header("location: " .BASE_URL);
+
 
     }
 
@@ -89,6 +97,13 @@ class AdminController{
             // si los datos son incorrectos muestro el form con un erro
            $this->view->showLoginForm("El usuario o la contraseña no existe.");
         }
+
+    }
+
+    public function logout(){
+        session_start();
+        session_destroy();
+        header("Location: " . BASE_URL);
 
     }
 

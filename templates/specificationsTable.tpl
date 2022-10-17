@@ -12,7 +12,7 @@
             <a class="dropdown-item" href="show-product-specification/negra">negra</a>
           </div>
         </li>
-</ul>      
+</ul>     
 <ul>
 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
