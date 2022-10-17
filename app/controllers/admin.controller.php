@@ -75,14 +75,13 @@ class AdminController{
     }
 
     public function validateUser(){
-        if(!empty($_POST['email'])&& !empty($_POST['password']))
+        //if(!empty($_POST['email'])&& !empty($_POST['password']))
         $email = $_POST['email'];
         $password = $_POST['password'];
 
         // busco el usuario por email
         $user = $this->userModel->getUserByEmail($email);
 
-        var_dump($user);
         // verifico que el usuario existe y que las contraseñas son iguales
         if ($user && password_verify($password, ($user->password))){
 
@@ -103,7 +102,7 @@ class AdminController{
     public function logout(){
         session_start();
         session_destroy();
-        header("Location: " . BASE_URL);
+        header("Location: " . BASE_URL . 'log-in-form');
 
     }
 

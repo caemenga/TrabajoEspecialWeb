@@ -25,8 +25,20 @@
             <a class="dropdown-item" href="showproduct-by-marc/san_felicien">San Felicien</a>
           </div>
         </li>
-</ul>     
+</ul>
+{else if $list[0]->producto == " tequila"}
+  <ul>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Marcas de Tequilas
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="showproduct-by-marc/toro">toro</a>
+    </div>
+  </li>
+  </ul>    
 {/if}
+
 
 
 

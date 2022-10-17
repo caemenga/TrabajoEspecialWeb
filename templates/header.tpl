@@ -33,18 +33,19 @@
             <a class="dropdown-item" href="show-specifications">Especificaciones</a>
           </div>
         </li>
-        {if !isset($smarty.session.USER_ID)}
+        
+        
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="log-in-form">Login</a>
           </li>
-        {else} 
-          <li class="nav-item mr-auto">
-            <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+         
+          <li class="nav-item ml-auto">
+            <a class="nav-link" aria-current="page" href="logout">Logout </a>
           </li>
-        {/if}
+         
       </ul>
     </div>
   </nav>
-    </header>
+ </header>
     <main class="container">
 
