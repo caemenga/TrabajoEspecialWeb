@@ -70,6 +70,10 @@ class AdminController{
 
     }
 
+    public function  showEditFormSpecifications($id){
+        $this->view->showEditFormSpecifications($id);
+    }
+
     public function ShowLoginForm(){
         $this->view->showLoginForm();
     }
