@@ -67,9 +67,9 @@ switch ($params[0]) {
         $freeUserController = new FreeUserController();
         $freeUserController -> showSpecificationByName($params[1]);
         break;
-    case 'showproduct-by-marc':
+    case 'show-product-by-brand':
         $freeUserController = new FreeUserController();
-        $freeUserController-> showProductByMarc($params[1]);
+        $freeUserController-> showProductByBrand($params[1]);
         break;
     case 'logout':
         $adminController = new AdminController();

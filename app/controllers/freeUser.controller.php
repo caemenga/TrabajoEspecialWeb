@@ -23,8 +23,8 @@ class FreeUserController{
         $this->view->showProductListSelect($list); 
     }
 
-    public function showProductByMarc($marc){
-        $list = $this->productModel->getProductByMarc($marc);
+    public function showProductByBrand($brand){
+        $list = $this->productModel->getProductByBrand($brand);
         $this->view->showProductListSelect($list); 
     }
 

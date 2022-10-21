@@ -7,9 +7,9 @@
             Marcas de Cervezas
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="showproduct-by-marc/quilmes">quilmes</a>
-            <a class="dropdown-item" href="showproduct-by-marc/brhama">brhama</a>
-            <a class="dropdown-item" href="showproduct-by-marc/andes">andes</a>
+            <a class="dropdown-item" href="show-product-by-brand/quilmes">quilmes</a>
+            <a class="dropdown-item" href="show-product-by-brand/brhama">brhama</a>
+            <a class="dropdown-item" href="show-product-by-brand/andes">andes</a>
           </div>
         </li>
 </ul>     
@@ -20,20 +20,21 @@
             Marcas de Vinos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="showproduct-by-marc/toro">toro</a>
-            <a class="dropdown-item" href="showproduct-by-marc/septima">septima</a>
-            <a class="dropdown-item" href="showproduct-by-marc/san_felicien">San Felicien</a>
+            <a class="dropdown-item" href="show-product-by-brand/toro">toro</a>
+            <a class="dropdown-item" href="show-product-by-brand/septima">septima</a>
+            <a class="dropdown-item" href="show-product-by-brand/san_felicien">San Felicien</a>
           </div>
         </li>
 </ul>
-{else if $list[0]->producto == " tequila"}
+{else if $list[0]->producto == "tequila"}
   <ul>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Marcas de Tequilas
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="showproduct-by-marc/toro">toro</a>
+      <a class="dropdown-item" href="show-product-by-brand/herrero">Herrero</a>
+      <a class="dropdown-item" href="show-product-by-brand/jamaica">Jamaica</a>
     </div>
   </li>
   </ul>    

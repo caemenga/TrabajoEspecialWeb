@@ -33,9 +33,9 @@ class ProductModel{
 
     }
 
-    public function updateProduct($product, $marca, $id){
+    public function updateProduct($product, $brand, $id){
         $query = $this->db->prepare("UPDATE db_productos SET producto =?, marca =? WHERE id_producto=?");
-        $query->execute([$product, $marca, $id]);
+        $query->execute([$product, $brand, $id]);
     }
 
     public function getProductById($id){
@@ -52,9 +52,9 @@ class ProductModel{
     return $products;
    }
 
-   public function getProductByMarc($marc){
+   public function getProductByBrand($brand){
     $query = $this->db->prepare("SELECT * FROM db_productos WHERE marca = ?");
-    $query->execute([$marc]);
+    $query->execute([$brand]);
 
     return $query->fetchAll(PDO::FETCH_OBJ);
    }
