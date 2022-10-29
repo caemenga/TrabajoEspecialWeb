@@ -69,6 +69,11 @@ class AdminController{
         $this->helper->checkLoggedIn();
         $this->view->showEditFormSpecifications($id);
     }
+    public function deleteSpecification($id){
+        $this->helper->checkLoggedIn();
+        $this->specificationsModel->delete($id);
+        header("location: " .BASE_URL .'show-specifications');
+    } 
 
     public function ShowLoginForm(){
         $this->view->showLoginForm();

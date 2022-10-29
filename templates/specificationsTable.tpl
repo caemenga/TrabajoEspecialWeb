@@ -56,7 +56,7 @@
       <td>{$specification->precio}</td>
       <td>{$specification->stock}</td>
       <td><a href='show-edit-specifications/{$specification->id_especificacion}' type='button' class='btn btn-danger'>Edit</a></td>
-      <td><a href='delete/{$specification->id_especificacion}' type='button' class='btn btn-danger'>Delete</a></td>
+      <td><a href='delete-specifications/{$specification->id_especificacion}' type='button' class='btn btn-danger'>Delete</a></td>
     </tr>
     {/foreach}    
 

@@ -29,4 +29,8 @@ class SpecificationsModel{
         $specifications = $query->fetchAll(PDO::FETCH_OBJ);
         return $specifications;
     }
+    public function delete($id){
+        $query = $this->db->prepare("DELETE FROM especificaciones WHERE id_especificacion = ?");
+        $query -> execute([$id]); 
+    }
 }

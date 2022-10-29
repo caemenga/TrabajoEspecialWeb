@@ -17,7 +17,7 @@ class AdminView{
     }
     public function showEditFormSpecifications($id){
         $this->smarty->assign('id_especificacion', $id);
-        $this->smarty->execute('editFormSpecification.tpl');
+        $this->smarty->display('editFormSpecification.tpl');
     }
 
     public function showProduct($product, $specification){
