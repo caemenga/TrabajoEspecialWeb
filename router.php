@@ -86,6 +86,11 @@ switch ($params[0]) {
     case 'logout':
         $adminController = new AdminController();
         $adminController -> logout();
+        break;
+    case 'show-editform-join':
+        $adminController =  new AdminController();
+        $adminController -> showEditProdCat($params[1]);
+        break;    
     default:
         echo('404 Page not found');
         break;

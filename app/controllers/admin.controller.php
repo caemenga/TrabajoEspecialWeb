@@ -91,6 +91,11 @@ class AdminController{
     public function ShowLoginForm(){
         $this->view->showLoginForm();
     }
+    public function showEditProdCat($id){
+        $product = $this->productModel->getProductById($id);
+        $specification = $this->specificationsModel->getSpecificationById($id);
+        $this->view->showEditProdCat($id, $product, $specification);
+    }
 
     public function validateUser(){
         //if(!empty($_POST['email'])&& !empty($_POST['password']))
@@ -123,6 +128,7 @@ class AdminController{
         header("Location: " . BASE_URL . 'home');
 
     }
+
 
     
 }

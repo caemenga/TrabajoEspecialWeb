@@ -15,12 +15,12 @@ class FreeUserController{
     }
     
     public function showProductList(){
-        $list = $this->productModel->getAllProducts();
-        $specification = $this->specificationsModel->getAllEspecificacitons();
-        $this->view->showProductList($list, $specification);
+        $list = $this->productModel->getAllProducts();   
+        $this->view->showProductList($list);
     }
     public function showProduct($name = null){
         $list = $this->productModel->getProductByName($name);
+        
         $this->view->showProductListSelect($list); 
     }
 
@@ -43,6 +43,7 @@ class FreeUserController{
         $list = $this->specificationsModel->getSpecificationByName($name);
         $this->view->showSpecifications($list);
     }
+
 
     public function filterBySpecification(){
         $tipo = $_POST['tipo'];

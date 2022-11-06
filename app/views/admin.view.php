@@ -5,8 +5,7 @@ class AdminView{
     public function __construct(){
         $this->smarty = new Smarty();
     }
-    public function showProductList($list, $specification){
-        $this->smarty->assign('specification', $specification);
+    public function showProductList($list){
         $this->smarty->assign('list', $list);
         $this->smarty->display('productTable.tpl');
     }
@@ -40,5 +39,12 @@ class AdminView{
     public function showLoginForm($error = null){
         $this->smarty->assign('error', $error);
         $this->smarty->display('logInForm.tpl');
+    }
+
+    public function showEditProdCat($id, $product, $specification){
+        $this->smarty->assign('id', $id);
+        $this->smarty->assign('product', $product);
+        $this->smarty->assign('specification', $specification);
+        $this->smarty->display('editProdCat.tpl');
     }
 }
