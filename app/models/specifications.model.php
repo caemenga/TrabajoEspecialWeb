@@ -15,6 +15,12 @@ class SpecificationsModel{
         return $specifications;
     }
 
+    public function getSpecificationById($id){
+        $query = $this->db->prepare("SELECT * FROM especificaciones WHERE id_especificacion =?");
+        $query->execute([$id]);
+        return $query -> fetch(PDO::FETCH_OBJ);
+    }
+
     public function getSpecificationByIdProduct($id){
         $query = $this->db->prepare("SELECT * FROM especificaciones WHERE id_producto=?");
         $query->execute([$id]);
@@ -29,6 +35,12 @@ class SpecificationsModel{
         $specifications = $query->fetchAll(PDO::FETCH_OBJ);
         return $specifications;
     }
+
+    public function updateSpecification($descripcion, $tipo, $stock, $precio, $id){
+        $query = $this->db->prepare("UPDATE especificaciones SET descripcion =?, tipo =?, stock =?, precio =? WHERE id_especificacion =?");
+        $query->execute([$descripcion, $tipo, $stock, $precio, $id]);
+    }
+
     public function delete($id){
         $query = $this->db->prepare("DELETE FROM especificaciones WHERE id_especificacion = ?");
         $query -> execute([$id]); 

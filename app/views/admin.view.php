@@ -5,17 +5,20 @@ class AdminView{
     public function __construct(){
         $this->smarty = new Smarty();
     }
-    public function showProductList($list){
+    public function showProductList($list, $specification){
+        $this->smarty->assign('specification', $specification);
         $this->smarty->assign('list', $list);
         $this->smarty->display('productTable.tpl');
     }
 
-    public function showEditForm($id){
+    public function showEditForm($id, $product){
+        $this->smarty->assign('product', $product);
         $this->smarty->assign('id_producto', $id);
         $this->smarty->display('editForm.tpl');
 
     }
-    public function showEditFormSpecifications($id){
+    public function showEditFormSpecifications($id, $specification){
+        $this->smarty->assign('specification', $specification);
         $this->smarty->assign('id_especificacion', $id);
         $this->smarty->display('editFormSpecification.tpl');
     }

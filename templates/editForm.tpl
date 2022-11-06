@@ -1,4 +1,10 @@
 {include file="header.tpl"}
+
+<div class="row">
+    <p>producto a editar : {$product->producto}</p>
+    <p>id : {$product->id_producto}</p>
+    <p>marca : {$product->marca}</p>
+</div>
 <form action='edit/{$id_producto}'method="POST">
 <div class="row">
     <div class="col">

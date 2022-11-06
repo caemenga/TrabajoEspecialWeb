@@ -2,6 +2,9 @@
 
 {include file = "formProduct.tpl"}
 
+{include file = "filterSelect.tpl"}
+
+
 <table class="table">
   <thead>
     <tr>

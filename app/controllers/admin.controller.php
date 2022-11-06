@@ -48,7 +48,9 @@ class AdminController{
 
     public function showEditForm($id){
         $this->helper->checkLoggedIn();
-        $this->view->showEditForm($id);
+        $list = $this->productModel->getProductById($id);
+        
+        $this->view->showEditForm($id, $list);
         }
     
     
@@ -67,7 +69,18 @@ class AdminController{
 
     public function  showEditFormSpecifications($id){
         $this->helper->checkLoggedIn();
-        $this->view->showEditFormSpecifications($id);
+        $specification = $this->specificationsModel->getSpecificationById($id);
+        $this->view->showEditFormSpecifications($id, $specification);
+    }
+
+    public function editSpecification($id){
+        $this->helper->checkLoggedIn();
+        $descripcion = $_POST["descripcion"];
+        $tipo = $_POST["tipo"];
+        $stock = $_POST["stock"];
+        $precio = $_POST["precio"];
+        $this->specificationsModel->updateSpecification($descripcion, $tipo, $stock, $precio, $id);
+        header("location: " .BASE_URL .'show-specifications');
     }
     public function deleteSpecification($id){
         $this->helper->checkLoggedIn();

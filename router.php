@@ -51,6 +51,10 @@ switch ($params[0]) {
         $adminController = new AdminController();
         $adminController -> showEditFormSpecifications($params[1]);
         break;
+    case 'edit-specification':
+        $adminController = new AdminController();
+        $adminController -> editSpecification($params[1]);
+        break;    
     case 'delete-specifications':
         $adminController = new AdminController();
         $adminController -> deleteSpecification($params[1]);
@@ -58,6 +62,10 @@ switch ($params[0]) {
     case 'add':
         $adminController = new AdminController();
         $adminController -> addProduct();
+        break;
+    case 'filter':
+        $freeUserController = new FreeUserController();
+        $freeUserController -> filterBySpecification();
         break;
     case 'show-product':
         $freeUserController = new FreeUserController();
