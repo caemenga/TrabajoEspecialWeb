@@ -5,8 +5,9 @@ class AdminView{
     public function __construct(){
         $this->smarty = new Smarty();
     }
-    public function showProductList($list){
+    public function showProductList($list, $specification){
         $this->smarty->assign('list', $list);
+        $this->smarty->assign('specification', $specification);
         $this->smarty->display('productTable.tpl');
     }
 

@@ -15,8 +15,9 @@ class FreeUserController{
     }
     
     public function showProductList(){
-        $list = $this->productModel->getAllProducts();   
-        $this->view->showProductList($list);
+        $list = $this->productModel->getAllProducts();
+        $specification = $this->specificationsModel->getAllEspecificacitons();   
+        $this->view->showProductList($list, $specification);
     }
     public function showProduct($name = null){
         $list = $this->productModel->getProductByName($name);
