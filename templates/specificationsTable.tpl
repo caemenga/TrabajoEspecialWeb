@@ -37,6 +37,8 @@
 </ul>    
 </div>  
 
+{include file = "addSpecificationForm.tpl"}
+
 <table class="table">
   <thead>
     <tr>

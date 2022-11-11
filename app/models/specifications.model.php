@@ -27,6 +27,11 @@ class SpecificationsModel{
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    public function insertSpecification($tipo, $descripcion, $stock, $precio, $idProducto){
+        $query = $this->db->prepare("INSERT INTO especificaciones (tipo, descripcion, stock, precio, id_producto) VALUES(?,?,?,?,?)");
+        $query->execute([$tipo, $descripcion, $stock, $precio, $idProducto]);
+        return $this->db->lastInsertId();
+    }
     
     public function getSpecificationByName($name){
         $query = $this->db->prepare("SELECT * FROM especificaciones WHERE tipo=?");

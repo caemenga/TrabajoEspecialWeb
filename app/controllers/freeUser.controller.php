@@ -51,11 +51,9 @@ class FreeUserController{
     public function filterBySpecification(){
         $tipo = $_POST['tipo'];
         $list = $this->specificationsModel->getSpecifications($tipo);
-        var_dump($list);
         $products = $this->productModel->getAllProducts();
         
         
         $this->view->showSpecificationsSelect($list, $products, $tipo);
     }
-
 }

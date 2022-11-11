@@ -66,6 +66,21 @@ class AdminController{
 
 
     }
+    
+    public function insertSpecification(){
+        $this->helper->checkLoggedIn();
+        if((isset($_POST))&&(!empty($_POST))){
+        $tipo = $_POST["tipo"];
+        $descripcion = $_POST["descripcion"];
+        $stock = $_POST["stock"];
+        $precio = $_POST["precio"];
+        $idProducto = $_POST["id_producto"];
+        
+        
+        $id = $this->specificationsModel->insertSpecification($tipo, $descripcion, $stock, $precio, $idProducto);
+        }
+        header("location: " .BASE_URL .'show-specifications');
+    }
 
     public function  showEditFormSpecifications($id){
         $this->helper->checkLoggedIn();

@@ -54,7 +54,12 @@ switch ($params[0]) {
     case 'edit-specification':
         $adminController = new AdminController();
         $adminController -> editSpecification($params[1]);
-        break;    
+        break;
+    case 'add-specification':
+        $adminController = new AdminController();
+        $adminController-> insertSpecification();
+        
+        break;        
     case 'delete-specifications':
         $adminController = new AdminController();
         $adminController -> deleteSpecification($params[1]);
