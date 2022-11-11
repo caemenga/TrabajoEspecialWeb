@@ -13,7 +13,6 @@
         <th scope="col">descripcion</th>
         <th scope="col">stock</th>
         <th scope="col">precio</th>
-
         <th scope="col">Ver</th>
         <th scope="col">Editar</th>
         <th scope="col">borrar</th>
@@ -32,7 +31,7 @@
             <td><span> <b>{$spe->stock}</b></span></td>
             <td><span> <b>{$spe->precio}</b></span></td>
             <td><a href='seeProduct/{$product->id_producto}' type='button' class='btn btn-danger'>Ver</a> </td>
-            <td><a href='show-edit-form/{$product->id_producto}' type='button' class='btn btn-danger'>Edit</a> </td>
+            <td><a href='show-edit-join/{$product->id_producto}/{$spe->id_especificacion}' type='button' class='btn btn-danger'>Edit</a> </td>
             <td><a href='delete/{$product->id_producto}' type='button' class='btn btn-danger'>Delete</a></td>
         </tr>
         {/if}   

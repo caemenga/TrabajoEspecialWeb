@@ -144,6 +144,29 @@ class AdminController{
 
     }
 
+    public function showEditJoin($idProd, $idSpe){
+        $this->helper->checkLoggedIn();
+        $product = $this->productModel->getProductById($idProd);
+        $specification = $this->specificationsModel->getSpecificationById($idSpe);
+
+        $this->view->showEditJoin($product, $specification);
+    }
+
+    public function editJoin($idProd, $idSpe){
+        $this->helper->checkLoggedIn();
+        $product = $_POST["producto"];
+        $marca = $_POST["marca"];
+        $descripcion = $_POST["descripcion"];
+        $tipo = $_POST["tipo"];
+        $stock = $_POST["stock"];
+        $precio = $_POST["precio"];
+        $this->specificationsModel->updateSpecification($descripcion, $tipo, $stock, $precio, $idSpe);
+        $this->productModel->updateProduct($product, $marca, $idProd);
+        header("location: " .BASE_URL .'show-join');
+
+
+    }
+
 
     
 }

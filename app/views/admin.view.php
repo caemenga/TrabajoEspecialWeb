@@ -42,13 +42,6 @@ class AdminView{
         $this->smarty->display('logInForm.tpl');
     }
 
-    public function showEditProdCat($id, $product, $specification){
-        $this->smarty->assign('id', $id);
-        $this->smarty->assign('product', $product);
-        $this->smarty->assign('specification', $specification);
-        $this->smarty->display('editProdCat.tpl');
-    }
-
     public function showSpecificationsSelect($list, $products, $tipo){
         $this->smarty->assign("specifications", $list);
         $this->smarty->assign("products", $products);
@@ -60,5 +53,11 @@ class AdminView{
         $this->smarty->assign("specifications", $specifications);
         $this->smarty->assign("products", $products);
         $this->smarty->display("showJoin.tpl");
+    }
+
+    public function showEditJoin($product, $specification){
+        $this->smarty->assign("product", $product);
+        $this->smarty->assign("specification", $specification);
+        $this->smarty->display("showEditJoin.tpl");
     }
 }

@@ -96,10 +96,13 @@ switch ($params[0]) {
         $freeUserController = new FreeUserController();
         $freeUserController-> showJoin();
         break;
-    case 'show-editform-join':
-        $adminController =  new AdminController();
-        $adminController -> showEditProdCat($params[1]);
-        break;    
+    case 'show-edit-join':
+        $adminController = new AdminController();
+        $adminController -> showEditJoin($params[1], $params[2]);
+        break;
+    case 'edit-join':
+        $adminController = new AdminController();
+        $adminController->editJoin($params[1], $params[2]);            
     default:
         echo('404 Page not found');
         break;

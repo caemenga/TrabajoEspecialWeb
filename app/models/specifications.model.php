@@ -57,4 +57,9 @@ class SpecificationsModel{
         $specifications = $query->fetchAll(PDO::FETCH_OBJ);
         return $specifications;
     }
+
+    public function updateSpecificationByidProd($descripcion, $tipo, $stock, $precio, $idProd){
+        $query = $this->db->prepare("UPDATE especificaciones SET descripcion =?, tipo =?, stock =?, precio =? WHERE id_producto =?");
+        $query->execute([$descripcion, $tipo, $stock, $precio, $id]);
+    }
 }
