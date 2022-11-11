@@ -92,6 +92,10 @@ switch ($params[0]) {
         $adminController = new AdminController();
         $adminController -> logout();
         break;
+    case 'show-join':
+        $freeUserController = new FreeUserController();
+        $freeUserController-> showJoin();
+        break;
     case 'show-editform-join':
         $adminController =  new AdminController();
         $adminController -> showEditProdCat($params[1]);

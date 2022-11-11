@@ -56,4 +56,9 @@ class FreeUserController{
         
         $this->view->showSpecificationsSelect($list, $products, $tipo);
     }
+    public function showJoin(){
+        $specifications = $this->specificationsModel->getAllEspecificacitons();
+        $products = $this->productModel->getAllProducts();
+        $this->view->showJoinTables($specifications, $products);
+    }
 }

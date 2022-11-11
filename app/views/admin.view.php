@@ -56,4 +56,9 @@ class AdminView{
         $this->smarty->display("SelectProducts.tpl");
 
     }
+    public function showJoinTables($specifications, $products){
+        $this->smarty->assign("specifications", $specifications);
+        $this->smarty->assign("products", $products);
+        $this->smarty->display("showJoin.tpl");
+    }
 }

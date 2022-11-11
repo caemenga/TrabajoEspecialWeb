@@ -31,6 +31,7 @@
             <a class="dropdown-item" href="show-product/tequila">tequila</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="show-specifications">Especificaciones</a>
+            <a class="dropdown-item" href="show-join">Ver Todo</a>
           </div>
         </li>
         
