@@ -13,13 +13,15 @@ class FreeUserController{
         $this->specificationsModel = new SpecificationsModel();
         $this->view = new AdminView();
     }
+
+    //------PRODUCTOS---------
     
-    public function showProductList(){
+    public function showProductList(){ 
         $list = $this->productModel->getAllProducts();
         $specification = $this->specificationsModel->getAllEspecificacitons();   
         $this->view->showProductList($list, $specification);
     }
-    public function showProduct($name = null){
+    public function showProduct($name = null){ 
         $list = $this->productModel->getProductByName($name);
         
         $this->view->showProductListSelect($list); 
@@ -35,7 +37,7 @@ class FreeUserController{
         $specification = $this->specificationsModel->getSpecificationByIdProduct($id);
         $this->view->showProduct($product, $specification);
     }
-
+    //-------ESPECIFICACIONES
     public function showSpecifications(){
         $list = $this->specificationsModel->getAllEspecificacitons();
         $this->view->showSpecifications($list);
@@ -48,8 +50,12 @@ class FreeUserController{
 
     public function filterBySpecification(){
         $tipo = $_POST['tipo'];
-        $list = $this->specificationsModel->getSpecificationByName($tipo);
-        $this->view->showSpecifications($list);
+        $list = $this->specificationsModel->getSpecifications($tipo);
+        var_dump($list);
+        $products = $this->productModel->getAllProducts();
+        
+        
+        $this->view->showSpecificationsSelect($list, $products, $tipo);
     }
 
 }

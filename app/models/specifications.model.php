@@ -45,4 +45,11 @@ class SpecificationsModel{
         $query = $this->db->prepare("DELETE FROM especificaciones WHERE id_especificacion = ?");
         $query -> execute([$id]); 
     }
+
+    public function getSpecifications($tipo){
+        $query = $this->db->prepare("SELECT id_especificacion FROM especificaciones WHERE tipo=?");
+        $query->execute([$tipo]);
+        $specifications = $query->fetchAll(PDO::FETCH_OBJ);
+        return $specifications;
+    }
 }

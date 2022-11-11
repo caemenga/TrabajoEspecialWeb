@@ -48,4 +48,12 @@ class AdminView{
         $this->smarty->assign('specification', $specification);
         $this->smarty->display('editProdCat.tpl');
     }
+
+    public function showSpecificationsSelect($list, $products, $tipo){
+        $this->smarty->assign("specifications", $list);
+        $this->smarty->assign("products", $products);
+        $this->smarty->assign("tipo", $tipo);
+        $this->smarty->display("SelectProducts.tpl");
+
+    }
 }
