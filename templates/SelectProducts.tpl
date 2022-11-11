@@ -1,5 +1,5 @@
 {include file = "header.tpl"}
-<h1>Productos del tipo = {$tipo}</h1>
+<h1 class="display-1">Productos del tipo {$tipo}</h1>
 <table class="table">
   <thead>
     <tr>

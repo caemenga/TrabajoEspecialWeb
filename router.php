@@ -102,7 +102,19 @@ switch ($params[0]) {
         break;
     case 'edit-join':
         $adminController = new AdminController();
-        $adminController->editJoin($params[1], $params[2]);            
+        $adminController->editJoin($params[1], $params[2]);
+        break;
+    case 'delete-join':
+        $adminController = new AdminController();
+        $adminController->deleteJoin($params[1], $params[2]);
+        break;
+    case 'show-add-join':
+        $adminController = new AdminController();
+        $adminController->showAddJoin();   
+        break;
+    case 'add-join':
+        $adminController = new AdminController();
+        $adminController -> addJoin();                  
     default:
         echo('404 Page not found');
         break;

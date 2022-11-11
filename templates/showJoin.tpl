@@ -1,8 +1,5 @@
 {include file = "header.tpl"}
-<h1>showjoin</h1>
-
-
-
+<a href='show-add-join' type='button' class='btn btn-danger'>Agregar Producto con categorias</a> 
 <table class="table">
   <thead>
     <tr>
@@ -21,7 +18,7 @@
   <tbody>
 {foreach from=$products item=$product}
     {foreach from=$specifications item=$spe}
-        {if $product->id_especificacion == $spe->id_especificacion}
+        {if $product->id_producto == $spe->id_producto}
             <tr>
             <td ><span> <b>{$product->id_producto}</b></span></td>
             <td><span> <b>{$product->producto}</b></span></td>
@@ -32,7 +29,7 @@
             <td><span> <b>{$spe->precio}</b></span></td>
             <td><a href='seeProduct/{$product->id_producto}' type='button' class='btn btn-danger'>Ver</a> </td>
             <td><a href='show-edit-join/{$product->id_producto}/{$spe->id_especificacion}' type='button' class='btn btn-danger'>Edit</a> </td>
-            <td><a href='delete/{$product->id_producto}' type='button' class='btn btn-danger'>Delete</a></td>
+            <td><a href='delete-join/{$product->id_producto}/{$spe->id_especificacion}' type='button' class='btn btn-danger'>Delete</a></td>
         </tr>
         {/if}   
     {/foreach}

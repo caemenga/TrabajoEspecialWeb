@@ -60,4 +60,7 @@ class AdminView{
         $this->smarty->assign("specification", $specification);
         $this->smarty->display("showEditJoin.tpl");
     }
+    public function showAddJoin(){
+        $this->smarty->display("addFormJoin.tpl");
+    }
 }

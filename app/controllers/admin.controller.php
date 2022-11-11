@@ -166,9 +166,35 @@ class AdminController{
 
 
     }
+    public function deleteJoin($idProd, $odSpe){
+        $this->helper->checkLoggedIn();
+        $this->specificationsModel->delete($idSpe);
+        $this->productModel->deleteProductByID($idProd);
+        header("location: " .BASE_URL .'show-join');
 
+    }
 
+    public function showAddJoin(){
+        $this->view->showAddJoin();
+    }
+
+    public function addJoin(){
+        $this->helper->checkLoggedIn();
+        
+        $product = $_POST["producto"];
+        $marca = $_POST["marca"];
+        $descripcion = $_POST["descripcion"];
+        $tipo = $_POST["tipo"];
+        $stock = $_POST["stock"];
+        $precio = $_POST["precio"];
+        if((isset($_POST))&&(!empty($_POST))){
+        
+        $idProd = $this->productModel->addProductToList($product, $marca);
+        $idSpe = $this->specificationsModel->insertSpecification($tipo, $descripcion, $stock, $precio,$idProd);
+        header("location: " .BASE_URL .'show-join');
+        }
     
+}
 }
 
 
