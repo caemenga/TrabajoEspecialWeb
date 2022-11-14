@@ -2,13 +2,13 @@
 class ProductModel{
     private $db;
     public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_tiendabebidas;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_tienda;charset=utf8', 'root', '');
     }
 
 
 
    public function getAllProducts(){ 
-        $query = $this->db->prepare("SELECT * FROM db_productos");
+        $query = $this->db->prepare("SELECT * FROM productos");
         $query->execute();
 
         $products = $query->fetchAll(PDO::FETCH_OBJ);
@@ -19,33 +19,34 @@ class ProductModel{
     } 
     
     public function deleteProductByID($id){
-        $query = $this->db->prepare("DELETE FROM db_productos WHERE id_producto=?");
+        $query = $this->db->prepare("DELETE FROM productos WHERE id_producto=?");
         $query->execute([$id]);
     }
-
-    public function addProductToList($product, $marca){
-
-
-        $query = $this->db->prepare("INSERT INTO db_productos (producto, marca) VALUES(?,?)");
-        $query->execute([$product, $marca]);
-        return $this->db->lastInsertId();
-
-
+    public function getProdAndSpe(){
+        $query = $this->db->prepare("SELECT * FROM productos JOIN especificaciones");
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function updateProduct($product, $brand, $id){
-        $query = $this->db->prepare("UPDATE db_productos SET producto =?, marca =? WHERE id_producto=?");
-        $query->execute([$product, $brand, $id]);
+    public function addProductToList($product, $marca, $idSpe){
+        $query = $this->db->prepare("INSERT INTO productos (producto, marca, id_especificacion_fk) VALUES(?,?,?)");
+        $query->execute([$product, $marca, $idSpe]);
+        return $this->db->lastInsertId();
+    }
+
+    public function updateProduct($product, $brand, $id, $idSpe){
+        $query = $this->db->prepare("UPDATE productos SET producto =?, marca =?, id_especificacion_fk=? WHERE id_producto=?");
+        $query->execute([$product, $brand,$idSpe, $id]);
     }
 
     public function getProductById($id){
-        $query = $this->db->prepare("SELECT * FROM db_productos WHERE id_producto =?");
+        $query = $this->db->prepare("SELECT * FROM productos JOIN especificaciones ON productos.id_especificacion_fk = especificaciones.id_especificacion WHERE id_producto =?");
         $query->execute([$id]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
    public function getProductByName($name){
-    $query = $this->db->prepare("SELECT * FROM db_productos WHERE producto=?");
+    $query = $this->db->prepare("SELECT * FROM productos WHERE producto=?");
     $query->execute([$name]);
 
     $products = $query->fetchAll(PDO::FETCH_OBJ);
@@ -53,14 +54,14 @@ class ProductModel{
    }
 
    public function getProductByBrand($brand){
-    $query = $this->db->prepare("SELECT * FROM db_productos WHERE marca = ?");
+    $query = $this->db->prepare("SELECT * FROM productos WHERE marca = ?");
     $query->execute([$brand]);
 
     return $query->fetchAll(PDO::FETCH_OBJ);
    }
 
    public function getProductoBySpecification($id){
-    $query = $this->db->prepare("SELECT * FROM db_productos WHERE id_especificacion=?");
+    $query = $this->db->prepare("SELECT * FROM productos WHERE id_especificacion=?");
     $query->execute([$id]);
     return $query->fetch(PDO::FETCH_OBJ);
    }

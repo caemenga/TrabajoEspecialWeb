@@ -36,14 +36,16 @@
         </li>
         
         
+        
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="log-in-form">Login</a>
           </li>
-        
-        
+         
           <li class="nav-item ml-auto">
-            <a class="nav-link" aria-current="page" href="logout">Logout</a>
+            <a class="nav-link" aria-current="page" href="logout">Logout </a>
           </li>
+        
+
         
 
       </ul>

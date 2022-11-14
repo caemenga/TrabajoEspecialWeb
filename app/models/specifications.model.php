@@ -4,7 +4,7 @@ class SpecificationsModel{
     private $db;
 
     public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_tiendabebidas;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_tienda;charset=utf8', 'root', '');
     }
 
     public function getAllEspecificacitons(){
@@ -27,9 +27,9 @@ class SpecificationsModel{
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
-    public function insertSpecification($tipo, $descripcion, $stock, $precio, $idProducto){
-        $query = $this->db->prepare("INSERT INTO especificaciones (tipo, descripcion, stock, precio, id_producto) VALUES(?,?,?,?,?)");
-        $query->execute([$tipo, $descripcion, $stock, $precio, $idProducto]);
+    public function insertSpecification($tipo, $descripcion, $precio){
+        $query = $this->db->prepare("INSERT INTO especificaciones (tipo, descripcion, precio) VALUES(?,?,?)");
+        $query->execute([$tipo, $descripcion, $precio]);
         return $this->db->lastInsertId();
     }
     
@@ -41,9 +41,9 @@ class SpecificationsModel{
         return $specifications;
     }
 
-    public function updateSpecification($descripcion, $tipo, $stock, $precio, $id){
-        $query = $this->db->prepare("UPDATE especificaciones SET descripcion =?, tipo =?, stock =?, precio =? WHERE id_especificacion =?");
-        $query->execute([$descripcion, $tipo, $stock, $precio, $id]);
+    public function updateSpecification($descripcion, $tipo,$precio, $id){
+        $query = $this->db->prepare("UPDATE especificaciones SET descripcion =?, tipo =?, precio =? WHERE id_especificacion =?");
+        $query->execute([$descripcion, $tipo,$precio, $id]);
     }
 
     public function delete($id){

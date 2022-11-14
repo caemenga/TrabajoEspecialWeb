@@ -28,8 +28,8 @@ class MultipleController{
 
     public function showProductById($id){ //para ver un producto determinado con sus spe
         $product = $this->productModel->getProductById($id);
-        $specification = $this->specificationsModel->getSpecificationByIdProduct($id);
-        $this->view->showProduct($product, $specification);
+        //$specification = $this->specificationsModel->getSpecificationByIdProduct($id);
+        $this->view->showProduct($product);
     }
 
     public function filterBySpecification(){
@@ -42,58 +42,51 @@ class MultipleController{
     }
 
     public function showJoin(){
-        $specifications = $this->specificationsModel->getAllEspecificacitons();
         $products = $this->productModel->getAllProducts();
-        $this->view->showJoinTables($specifications, $products);
+        $specifications = $this->specificationsModel->getAllEspecificacitons();
+        $this->view->showJoinTables($products, $specifications);
     }
 
-    public function showEditJoin($idProd, $idSpe){
+    public function showEditJoin($idProd){
         $this->helper->checkLoggedIn();
         $product = $this->productModel->getProductById($idProd);
-        $specification = $this->specificationsModel->getSpecificationById($idSpe);
+        $specification = $this->specificationsModel->getAllEspecificacitons();
 
         $this->view->showEditJoin($product, $specification);
     }
 
-    public function editJoin($idProd, $idSpe){
+    public function editJoin($idProd){
         $this->helper->checkLoggedIn();
         $product = $_POST["producto"];
         $marca = $_POST["marca"];
-        $descripcion = $_POST["descripcion"];
-        $tipo = $_POST["tipo"];
-        $stock = $_POST["stock"];
-        $precio = $_POST["precio"];
-        $this->specificationsModel->updateSpecification($descripcion, $tipo, $stock, $precio, $idSpe);
-        $this->productModel->updateProduct($product, $marca, $idProd);
+        $idSpe = $_POST["id"];
+        $this->productModel->updateProduct($product, $marca, $idProd, $idSpe);
         header("location: " .BASE_URL .'show-join');
 
 
     }
-    public function deleteJoin($idProd, $odSpe){
+    public function deleteJoin($idProd){
         $this->helper->checkLoggedIn();
-        $this->specificationsModel->delete($idSpe);
         $this->productModel->deleteProductByID($idProd);
         header("location: " .BASE_URL .'show-join');
 
     }
 
     public function showAddJoin(){
-        $this->view->showAddJoin();
+        $this->helper->checkLoggedIn();
+        $list = $this->specificationsModel->getAllEspecificacitons();
+        $this->view->showAddJoin($list);
     }
 
     public function addJoin(){
         $this->helper->checkLoggedIn();
-        
         $product = $_POST["producto"];
         $marca = $_POST["marca"];
-        $descripcion = $_POST["descripcion"];
-        $tipo = $_POST["tipo"];
-        $stock = $_POST["stock"];
-        $precio = $_POST["precio"];
-        if((isset($_POST))&&(!empty($_POST))){
+        $idSpe = $_POST["id"];
         
-        $idProd = $this->productModel->addProductToList($product, $marca);
-        $idSpe = $this->specificationsModel->insertSpecification($tipo, $descripcion, $stock, $precio,$idProd);
+        if((isset($_POST))&&(!empty($_POST))){
+        $idProd = $this->productModel->addProductToList($product, $marca, $idSpe);
+        
         header("location: " .BASE_URL .'show-join');
         }
     

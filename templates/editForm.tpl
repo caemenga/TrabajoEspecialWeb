@@ -5,7 +5,7 @@
     <p>id : {$product->id_producto}</p>
     <p>marca : {$product->marca}</p>
 </div>
-<form action='edit/{$id_producto}'method="POST">
+<form action='edit/{$id_producto}/{$product->id_especificacion_fk}'method="POST">
 <div class="row">
     <div class="col">
   
@@ -19,6 +19,15 @@
             <label for="exampleInputPassword1" class="form-label">marca</label>
             <input name="marca" type="text" class="form-control" id="exampleInputPassword1">
         </div>
+        <div class="mb-3">
+                <div class=" input-group mb-5 g-3">
+                    <select class="form-select" name="id" aria-label="Example select with button addon">
+                        <option selected>Seleccione un Tipo</option>
+                        {foreach from=$specification item=$spe}
+                            <option value="{$spe->id_especificacion}">{$spe->tipo}</option>
+                        {/foreach}
+                </select>
+            </div>
         
     </div>    
 

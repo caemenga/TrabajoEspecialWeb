@@ -33,12 +33,10 @@ class SpecificationsController{
         if((isset($_POST))&&(!empty($_POST))){
         $tipo = $_POST["tipo"];
         $descripcion = $_POST["descripcion"];
-        $stock = $_POST["stock"];
         $precio = $_POST["precio"];
-        $idProducto = $_POST["id_producto"];
         
         
-        $id = $this->model->insertSpecification($tipo, $descripcion, $stock, $precio, $idProducto);
+        $id = $this->model->insertSpecification($tipo, $descripcion, $precio);
         }
         header("location: " .BASE_URL .'show-specifications');
     }
@@ -53,14 +51,18 @@ class SpecificationsController{
         $this->helper->checkLoggedIn();
         $descripcion = $_POST["descripcion"];
         $tipo = $_POST["tipo"];
-        $stock = $_POST["stock"];
         $precio = $_POST["precio"];
-        $this->model->updateSpecification($descripcion, $tipo, $stock, $precio, $id);
+        $this->model->updateSpecification($descripcion, $tipo, $precio, $id);
         header("location: " .BASE_URL .'show-specifications');
     }
     public function deleteSpecification($id){
         $this->helper->checkLoggedIn();
+        try {
         $this->model->delete($id);
         header("location: " .BASE_URL .'show-specifications');
-    } 
+        }catch (PDOException $e){
+        $this->view->showerror("No se puede eliminar esta especificacion porque pertenece a al menos una bebida");
+       } 
+    }
 }
+

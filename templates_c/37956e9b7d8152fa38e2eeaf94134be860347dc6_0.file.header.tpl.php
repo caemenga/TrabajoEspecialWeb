@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-11-11 18:42:32
+/* Smarty version 4.2.1, created on 2022-11-14 23:18:47
   from 'C:\xampp\htdocs\web2\TPE2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_636e8988879392_58763506',
+  'unifunc' => 'content_6372bec7a3c029_77224580',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '37956e9b7d8152fa38e2eeaf94134be860347dc6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE2\\templates\\header.tpl',
-      1 => 1668188189,
+      1 => 1668464192,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636e8988879392_58763506 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6372bec7a3c029_77224580 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,14 +60,16 @@ function content_636e8988879392_58763506 (Smarty_Internal_Template $_smarty_tpl)
         </li>
         
         
+        
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="log-in-form">Login</a>
           </li>
-        
-        
+         
           <li class="nav-item ml-auto">
-            <a class="nav-link" aria-current="page" href="logout">Logout</a>
+            <a class="nav-link" aria-current="page" href="logout">Logout </a>
           </li>
+        
+
         
 
       </ul>

@@ -45,11 +45,11 @@ switch ($params[0]) {
         break;
     case 'show-edit-form':
         $productController = new ProductController();
-        $productController -> showEditForm($params[1]);
+        $productController -> showEditForm($params[1], $params[2]);
         break;
     case 'edit':
         $productController = new ProductController();
-        $productController -> editProduct($params[1]);
+        $productController -> editProduct($params[1], $params[2]);
         break;
     case 'show-product':
         $productController = new ProductController();
@@ -102,15 +102,15 @@ switch ($params[0]) {
         break;
     case 'show-edit-join':
         $multipleController = new MultipleController();
-        $multipleController -> showEditJoin($params[1], $params[2]);
+        $multipleController -> showEditJoin($params[1]);
         break;
     case 'edit-join':
         $multipleController = new MultipleController();
-        $multipleController->editJoin($params[1], $params[2]);
+        $multipleController->editJoin($params[1]);
         break;
     case 'delete-join':
         $multipleController = new MultipleController();
-        $multipleController->deleteJoin($params[1], $params[2]);
+        $multipleController->deleteJoin($params[1]);
         break;
     case 'show-add-join':
         $multipleController = new MultipleController();
@@ -118,7 +118,8 @@ switch ($params[0]) {
         break;
     case 'add-join':
         $multipleController = new MultipleController();
-        $multipleController -> addJoin();                  
+        $multipleController -> addJoin();
+        break;                  
     default:
         echo('404 Page not found');
         break;

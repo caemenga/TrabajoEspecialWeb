@@ -44,20 +44,17 @@ class ProductController{
         header("location: " .BASE_URL);  
     }
 
-    public function showEditForm($id){
+    public function showEditForm($id, $idSpe){
         $this->helper->checkLoggedIn();
         $list = $this->model->getProductById($id);
-        $this->view->showEditForm($id, $list);
+        $this->view->showEditForm($id,$idSpe, $list);
         }
     
-    public function editProduct($id){
-         $this->helper->checkLoggedIn();
+    public function editProduct($id, $idSpe){
+            $this->helper->checkLoggedIn();
             $product = $_POST["producto"];
             $marca = $_POST["marca"];
-            $this->model->updateProduct($product, $marca, $id);
-            
+            $this->model->updateProduct($product, $marca, $id, $idSpe);
             header("location: " .BASE_URL);
-
-
     }
 }

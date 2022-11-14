@@ -14,7 +14,7 @@
   <tbody>
 {foreach from=$products item=$product}
     {foreach from=$specifications item=$spe}
-        {if $product->id_especificacion == $spe->id_especificacion}
+        {if $product->id_especificacion_fk == $spe->id_especificacion}
             <tr>
             <td ><span> <b>{$product->id_producto}</b></span></td>
             <td><span> <b>{$product->producto}</b></span></td>

@@ -11,8 +11,9 @@ class AdminView{
         $this->smarty->display('productTable.tpl');
     }
 
-    public function showEditForm($id, $product){
+    public function showEditForm($id,$idSpe, $product){
         $this->smarty->assign('product', $product);
+        $this->smarty->assign('id_specificacion', $idSpe);
         $this->smarty->assign('id_producto', $id);
         $this->smarty->display('editForm.tpl');
 
@@ -23,9 +24,8 @@ class AdminView{
         $this->smarty->display('editFormSpecification.tpl');
     }
 
-    public function showProduct($product, $specification){
+    public function showProduct($product){
         $this->smarty->assign('product', $product);
-        $this->smarty->assign('specification', $specification);
         $this->smarty->display('showProduct.tpl');
     }
     public function showProductListSelect($list){
@@ -49,9 +49,9 @@ class AdminView{
         $this->smarty->display("SelectProducts.tpl");
 
     }
-    public function showJoinTables($specifications, $products){
-        $this->smarty->assign("specifications", $specifications);
+    public function showJoinTables($products, $specifications){
         $this->smarty->assign("products", $products);
+        $this->smarty->assign("specifications", $specifications);
         $this->smarty->display("showJoin.tpl");
     }
 
@@ -60,7 +60,13 @@ class AdminView{
         $this->smarty->assign("specification", $specification);
         $this->smarty->display("showEditJoin.tpl");
     }
-    public function showAddJoin(){
+    public function showAddJoin($list){
+        $this->smarty->assign('spe', $list);
         $this->smarty->display("addFormJoin.tpl");
+    }
+
+    public function showError($error = null){
+        $this->smarty->assign("error", $error);
+        $this->smarty->display("error.tpl");
     }
 }

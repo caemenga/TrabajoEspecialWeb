@@ -11,24 +11,17 @@
                 <label for="exampleInputPassword1" class="form-label">marca</label>
                 <input name="marca" type="text" class="form-control" id="exampleInputPassword1">
             </div>            
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Descripcion</label>
-                <textarea name="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>    
             <div class="col">
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Tipo</label>
-                <input  name="tipo" type="text" class="form-control" id="exampleInputPassword1">
+                <div class=" input-group mb-5 g-3">
+                    <select class="form-select" name="id" aria-label="Example select with button addon">
+                        <option selected>Seleccione un Tipo</option>
+                        {foreach from=$spe item=$s}
+                            <option value="{$s->id_especificacion}">{$s->tipo}</option>
+                        {/foreach}
+                </select>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Stock</label>
-                <input  name="stock" type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Precio</label>
-                <input name="precio" type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-        </div>    
     <button type="submit" class="btn btn-primary mb-5">Add product</button>
 </form>
 
